@@ -13,3 +13,6 @@ CREATE TABLE users (
     INDEX idx_deleted_at (deleted_at),
     INDEX idx_email (email)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE users 
+ADD COLUMN role VARCHAR(20) NOT NULL DEFAULT 'student' COMMENT '用户角色: student, teacher, admin';
