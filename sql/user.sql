@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS aicongyou
+CREATE DATABASE IF NOT EXISTS aicongyou;
 USE aicongyou;
 
 CREATE TABLE users (
