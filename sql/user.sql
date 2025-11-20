@@ -66,3 +66,10 @@ CREATE TABLE submission (
     INDEX idx_task_id (task_id),
     INDEX idx_is_recommend (is_recommend) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+ALTER TABLE submission 
+ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+ADD COLUMN deleted_at TIMESTAMP NULL COMMENT '删除时间',
+ADD COLUMN submitted_at TIMESTAMP NULL COMMENT '提交时间',
+ADD INDEX idx_deleted_at (deleted_at);
