@@ -13,5 +13,4 @@ func GetAllUsers(ctx *gin.Context) () {
           ctx.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
       }
       ctx.JSON(http.StatusOK, users)
-
 }
